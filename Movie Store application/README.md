@@ -1,3 +1,3 @@
 #README-IMAGE Test
-![MovieStoreLandingImage](https://i.postimg.cc/qgnX6rZs/Landing-Page.png)
-![MovieStoreDetailPage](https://i.postimg.cc/6yXVdPDD/Movie-Detail.png)
+![MovieStoreLandingImage](./images/Landing%20Page.png){:width="300px" height="200px"}
+![MovieStoreDetailPage](./images/MovieDetail.png){:width="300px" height="200px"}
