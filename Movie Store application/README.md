@@ -1,5 +1,6 @@
 #README-IMAGE Test
 Landing Page Pic
-![MovieStoreLandingImage](./images/Landing%20Page.png)
+<img src="./images/Landing%20Page.png" alt="Movie Store Landing Image" width="500">
+
 Movie Detail Pic
-![MovieStoreDetailPage](./images/MovieDetail.png)
+<img src="./images/MovieDetail.png" alt="Movie Store Detail Page" width="300">
