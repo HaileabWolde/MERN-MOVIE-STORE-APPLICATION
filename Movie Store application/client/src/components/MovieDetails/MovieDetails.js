@@ -14,7 +14,11 @@ const PostDetails = ()=> {
     const [user, setUser]  = useState(JSON.parse(localStorage.getItem('profile')))
     const [comment, setComment] = useState('')
     const [AllComments, setAllComments] = useState([])
-
+ /*
+    so the comment variables holds the changes on the textfield section of the comments 
+    and the allcomments variables holds array of comments coming back from the server to be passed
+    as props to the commments
+    */
     useEffect(()=>{
         dispatch(getMovie(id))
     }, [id])
@@ -24,7 +28,11 @@ const PostDetails = ()=> {
             dispatch(searchPost(movie.genre.join(',')))
         }
         setAllComments(movie?.comments)
-       
+       /*
+        this useEffect will dispatch first the recomendation post genre to fetch post with the same genre type
+        and also for the first render the all comments variables will hold the array of the movie comments to be passed 
+        to the comment section
+       */ 
     }, [movie])
 
     if(!movie) return null;
@@ -35,6 +43,13 @@ const PostDetails = ()=> {
     )
    }
    const handleComment = async ()=> {
+     /*
+    here what is happening is when a user clicks the button of adding a comment it will 
+    first acquire the name of the user from the localstorage then add the specified comment
+    then will dispatch handleall comment where on the server side it will push this string on
+    the comments array then it will return it this array and set the allcomments array to populated by this array of comment
+    then that will displayed to the user
+    */
     const AllComment = `${user?.result?.name}: ${comment}`
     setAllComments(await dispatch(handleAllComment(AllComment, movie._id))) 
     setComment('')

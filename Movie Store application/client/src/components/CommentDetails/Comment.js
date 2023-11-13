@@ -1,5 +1,8 @@
 import { Typography } from "@material-ui/core"
 const Comments = ({AllComments})=> {
+    /*
+here it will hold the specific movie post array comments and will display them to the user
+*/
 
 return (
     <div className="flex flex-wrap md:flex-col md:mx-0 mx-[30px] mt-10 md:mt-0">

@@ -2,7 +2,10 @@ import { useState } from "react"
 import { TextField, Typography, Button} from "@material-ui/core"
 
 const CommentDetails = ({handleComment, comment, setComment})=> {
-   
+     /*
+   here it on change it will changes the commett variable on changes happening on the textfiled
+   and on click it will dispatch a handle comment where this function will dispatch a comment action creator
+  */ 
     const [user, setUser]  = useState(JSON.parse(localStorage.getItem('profile')))  
     return(
         <div className="">
