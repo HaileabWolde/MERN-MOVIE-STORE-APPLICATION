@@ -9,7 +9,7 @@
   <ul>
     <li><strong>User Authentication:</strong> Users can create accounts, log in, and log out securely. This ensures that only authenticated users can access and modify the movie posts and critiques.</li>
     <li><strong>Movie CRUD:</strong> Users can perform basic CRUD operations on movie posts. They can create new movie posts, update existing ones, delete unwanted posts, and view all the movies available.</li>
-    <li><strong>Movie Detail Page:</strong> Each movie has its own detail page that provides detailed information about the movie such as the title, genre, release date, director, and cast. Users can also view and post critiques specific to that movie.</li>
+    <li><strong>Movie Detail Page:</strong> Each movie has its own detail page that provides detailed information about the movie such as the title, genre, and also Movie Descriptions. Users can also view and post critiques specific to that movie.</li>
     <li><strong>Critiques:</strong> Users can read critiques posted by others for each movie. They can also post their own critiques, sharing their thoughts and opinions about the movie.</li>
   </ul>
   <h2>Screenshots</h2>
