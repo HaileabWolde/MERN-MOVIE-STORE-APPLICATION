@@ -16,5 +16,5 @@
   <p>Here are some screenshots of the Movie Store application:</p>
   <img src="./images/Landing%20Page.png" alt="Movie Store Landing Image" width="500">
   <img src="./images/MovieDetail.png" alt="Movie Store Detail Page" width="500">
-  <img src="./images//SignIn .png" alt="Movie Sign In page" width="500">
+  <img src="./images//SignIn .png" alt="Movie Sign In page" width="500" height="200">
 </div>
