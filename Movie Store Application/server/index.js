@@ -17,6 +17,17 @@ app.use(cors());
 app.use('/movies', movieRoutes)
 app.use('/users', userRoutes)
 
+app.use((err, req, res, next)=>{
+    
+    const statusCode = err.statusCode || 500;
+    const message =  err.message || 'Internal Server Error'
+    return res.status(statusCode).json({
+     success: false,
+     statusCode,
+     message
+    })
+ })
+
 const start = async()=> {
     try{
         await connectDB(process.env.MONGO_URI)

@@ -1,23 +1,24 @@
 import UserSchema from "../model/userSchema.js"
-export const signin = async (req, res) => {
+import { errorHandler } from "../util/error.js";
+export const signin = async (req, res, next) => {
   const { email, password } = req.body;
   
   try {
     const result = await UserSchema.findOne({ email });
     if (!result) {
-      return res.status(400).json({ msg: "User doesn't exist" });
+      return (next(errorHandler(500, 'User is not Found')))
     }
 
     const isPasswordMatched = await result.isPasswordmatched(password);
     if (!isPasswordMatched) {
-      return res.status(400).json({ msg: 'Invalid credentials' });
+      return (next(errorHandler(500, 'Invalid Credntials')));
     }
 
 
     const token = result.createJWT();
     res.status(201).json({ result, token });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return (next(error))
   }
 };
 
@@ -27,11 +28,11 @@ export const signup = async (req, res) => {
   try {
     const user = await UserSchema.findOne({ email });
     if (user) {
-      return res.status(400).json({ msg: "User already exists" });
+      return (next(errorHandler(500, 'User Already Exists')))
     }
 
     if (password !== confirmPassword) {
-      return res.status(400).json({ msg: "Password is incorrect" });
+      return (next(errorHandler(500, 'Invalid Crenditals')))
     }
 
     const result = await UserSchema.create({
@@ -43,6 +44,6 @@ export const signup = async (req, res) => {
     const token = result.createJWT();
     res.status(201).json({ result, token });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return (next(error))
   }
 };
