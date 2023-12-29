@@ -12,7 +12,12 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-app.use(cors());
+app.use(cors({
+    origin: ["https://moviereviewmern.netlify.app", "http://localhost:4000"],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"], // Add any other headers you need
+  }));
 app.get('/', (req, res)=>{
     res.json('Hello')
 })
